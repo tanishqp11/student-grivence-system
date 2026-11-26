@@ -1,0 +1,22 @@
+{
+  "name": "university-grievance-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "University grievance portal (BCA minor project) - static front end + Vercel serverless API + Postgres",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "start": "node scripts/dev-server.js",
+    "db:init": "node scripts/db-init.js",
+    "test": "node scripts/test-api.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "pg-mem": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

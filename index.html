@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CampusCare | University Grievance Portal</title>
+    <meta
+      name="description"
+      content="File academic, hostel, examination and infrastructure grievances with your university grievance cell and track every action until it is resolved."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547d0'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-page="home">
+    <div id="site-header"></div>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="pulse"></span>Student Grievance Redressal · 2026–27</span>
+            <h1>Report a campus problem.<br /><span class="accent">Track it until it is fixed.</span></h1>
+            <p class="hero-lead">
+              Use this portal to report academic, hostel, examination and infrastructure problems.
+              Every report gets a tracking ID and a written record of what the grievance cell did about it.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn--light" href="/login?next=%2Fdashboard%3Ftab%3Dfile">
+                File a grievance
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+              <a class="btn btn--outline-light" href="/track">Track a grievance</a>
+            </div>
+            <ul class="hero-points">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Instant acknowledgement with a tracking ID
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Every update is time-stamped
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Visible only to you and the cell
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <span class="float-chip float-chip--time">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+              First review within 2 working days
+            </span>
+
+            <article class="ticket-card">
+              <div class="ticket-top">
+                <span class="ticket-code">GRV-2026-8K2PA</span>
+                <span class="pill pill--review"><span class="dot"></span>In review</span>
+              </div>
+              <h2 class="ticket-subject">Revaluation result not declared for DBMS paper</h2>
+              <p class="ticket-meta">Examination · Submitted 6 days ago</p>
+
+              <ol class="mini-steps" aria-label="Ticket progress">
+                <li class="mini-step is-done">Submitted</li>
+                <li class="mini-step is-done">Reviewed</li>
+                <li class="mini-step is-current">Action</li>
+              </ol>
+
+              <p class="ticket-note">
+                Answer script located, re-totalling in progress. Expected closure in 3 working days.
+              </p>
+
+              <div class="ticket-foot">
+                <span>Assigned to <strong>Examination Cell</strong></span>
+                <span>Updated <strong>2 d ago</strong></span>
+              </div>
+            </article>
+
+            <span class="float-chip float-chip--resolved">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+              Resolved · Lab sessions restored
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="Portal statistics">
+        <div class="container stats-grid">
+          <div class="stat">
+            <strong data-stat="total">—</strong>
+            <span>Grievances filed</span>
+          </div>
+          <div class="stat">
+            <strong data-stat="resolved">—</strong>
+            <span>Resolved by the cell</span>
+          </div>
+          <div class="stat">
+            <strong data-stat="rate">—</strong>
+            <span>Resolution rate</span>
+          </div>
+          <div class="stat">
+            <strong data-stat="avg">—</strong>
+            <span>Average resolution time</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="categories">
+        <div class="container">
+          <div class="section-head">
+            <span class="overline">What you can report</span>
+            <h2>Grievance categories</h2>
+            <p>
+              Choose the category that fits best. The cell forwards your ticket to the responsible
+              department and records the handover in your timeline.
+            </p>
+          </div>
+
+          <div class="category-grid">
+            <a class="category-card" href="/dashboard?tab=file&amp;category=academic">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-4 9 4-9 4-9-4Z" /><path d="M6 11.5V16c0 1.9 2.7 3.5 6 3.5s6-1.6 6-3.5v-4.5" /></svg>
+              </span>
+              <h3>Academic</h3>
+              <p>Attendance, syllabus coverage, internal marks, class timings and faculty allocation.</p>
+              <span class="cat-link">File under Academic →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=examination">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7V3Z" /><path d="M14 3v4h4M10 12h6M10 16h6M10 8h2" /></svg>
+              </span>
+              <h3>Examination</h3>
+              <p>Revaluation, result delays, hall tickets, answer script access and exam scheduling.</p>
+              <span class="cat-link">File under Examination →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=hostel">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V6l8-3 8 3v15" /><path d="M9 21v-5h6v5M8 9h1M15 9h1M8 12.5h1M15 12.5h1" /></svg>
+              </span>
+              <h3>Hostel &amp; Mess</h3>
+              <p>Room allotment, water and electricity, mess quality, laundry and hostel discipline.</p>
+              <span class="cat-link">File under Hostel &amp; Mess →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=infrastructure">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 3.5a5 5 0 0 0-6.6 6.6L3 15v6h6l4.9-4.9a5 5 0 0 0 6.6-6.6l-3.2 3.2-3.4-3.4 3.6-5.8Z" /></svg>
+              </span>
+              <h3>Infrastructure</h3>
+              <p>Classrooms, labs, projectors, Wi-Fi, washrooms, library seating and campus upkeep.</p>
+              <span class="cat-link">File under Infrastructure →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=faculty">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /><path d="M5 21a7 7 0 0 1 14 0" /></svg>
+              </span>
+              <h3>Faculty Conduct</h3>
+              <p>Unfair evaluation, attendance policy issues, classroom conduct and teaching concerns.</p>
+              <span class="cat-link">File under Faculty Conduct →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=fees">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v11H3V7Z" /><path d="M3 11h18M7 15h4" /></svg>
+              </span>
+              <h3>Fees &amp; Scholarship</h3>
+              <p>Fee receipts, refunds, scholarship disbursal, bank details and instalment requests.</p>
+              <span class="cat-link">File under Fees &amp; Scholarship →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=harassment">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.7-7 9-4.1-1.3-7-4.8-7-9V6l7-3Z" /><path d="M9.5 12l2 2 4-4" /></svg>
+              </span>
+              <h3>Harassment / Ragging</h3>
+              <p>Ragging, bullying, discrimination and harassment. Routed to the committee on priority.</p>
+              <span class="cat-link">File under Harassment →</span>
+            </a>
+
+            <a class="category-card" href="/dashboard?tab=file&amp;category=other">
+              <span class="cat-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h5v5H5V5Z" /><path d="M14 5h5v5h-5V5ZM5 14h5v5H5v-5ZM14 14h5v5h-5v-5Z" /></svg>
+              </span>
+              <h3>Other</h3>
+              <p>Transport, canteen, ID cards, events or anything that does not fit the categories above.</p>
+              <span class="cat-link">File under Other →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight" id="how-it-works">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <span class="overline">How it works</span>
+            <h2>How a grievance moves</h2>
+            <p>Nothing gets lost in an inbox. Each ticket has an owner, a status and a written record.</p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <span class="step-num">1</span>
+              <h3>Create your account</h3>
+              <p>Register once with your roll number, department and email. Those details are reused on every ticket.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">2</span>
+              <h3>File the grievance</h3>
+              <p>Choose a category, describe what happened, mark the priority and add the place or office involved.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">3</span>
+              <h3>Get a tracking ID</h3>
+              <p>The portal issues a code such as <span class="mono">GRV-2026-AB12C</span>. Use it any time, even without signing in.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-num">4</span>
+              <h3>Follow every action</h3>
+              <p>See routing, assignment, remarks and closure on one timeline. Unresolved tickets escalate after seven days.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container split">
+          <article class="panel-card">
+            <span class="overline">For students</span>
+            <h3>What you can do here</h3>
+            <p>No paper forms and no queue outside the grievance office.</p>
+            <ul class="check-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                File from a phone, tablet or lab computer.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Track status with your ID, without signing in again.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Read the remark written when your status changes.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Your grievance list is visible only to you and the grievance cell.
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel-card panel-card--dark">
+            <span class="overline overline--light">For the grievance cell</span>
+            <h3>What the grievance cell sees</h3>
+            <p>Administrators work from one queue instead of scattered emails and registers.</p>
+            <ul class="check-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Filter by status, category, department and priority; search by ID or student.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Update the status, assign an officer and add a remark in one action.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Resolution rate, average closure time and category load at a glance.
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Export the full register as CSV for the monthly review meeting.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <span class="overline">Questions</span>
+            <h2>Before you file</h2>
+          </div>
+
+          <div class="faq">
+            <details class="faq-item">
+              <summary>Who can file a grievance?</summary>
+              <p>
+                Any currently enrolled student of the university with a valid roll number. Create an account with
+                your roll number, department and university email to submit your first grievance.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Will my grievance be anonymous?</summary>
+              <p>
+                Your name and roll number are attached to the ticket so the cell can verify facts and follow up.
+                Only you and the grievance cell can see your tickets. Other students cannot open them, and the
+                public tracking page shows the subject and timeline but never your personal details.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>How long does a grievance take?</summary>
+              <p>
+                You get an acknowledgement and tracking ID immediately. The cell aims to record a first response
+                within two working days and close the grievance within ten working days. If nothing moves for
+                seven days, the ticket is flagged for escalation to the dean of student welfare.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>Can I track a grievance without signing in?</summary>
+              <p>
+                Yes. Keep the tracking ID from your acknowledgement and enter it on the <a href="/track">track status</a>
+                page. The ID is the only thing needed, so share it carefully.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>What happens with ragging or harassment complaints?</summary>
+              <p>
+                These are marked as urgent and routed to the anti-ragging / internal complaints committee. Timelines
+                are shorter than standard grievances, and the record is restricted to committee members and the
+                grievance cell. If you are in immediate danger, contact campus security first.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>I am not satisfied with the closure. Can I reopen it?</summary>
+              <p>
+                Reply with new information in the same grievance and the cell can reopen it, or escalate the matter
+                in writing to the dean of student welfare with your tracking ID. The full timeline stays attached as
+                evidence.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h2>Something not right on campus?</h2>
+              <p>Put it on record. You will get a tracking ID and can follow every update.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="btn btn--light" href="/login?next=%2Fdashboard%3Ftab%3Dfile">File a grievance</a>
+              <a class="btn btn--outline-light" href="/track">Track a grievance</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/assets/js/index.js"></script>
+  </body>
+</html>

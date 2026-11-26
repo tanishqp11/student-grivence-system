@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.local
+.vercel
+.freebuff/
+.DS_Store
+npm-debug.log*
+dev-server.log

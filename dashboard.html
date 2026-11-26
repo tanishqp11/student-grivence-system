@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My dashboard | CampusCare Grievance Portal</title>
+    <meta name="description" content="File a new grievance and follow the status of every ticket you have raised." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547d0'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-page="dashboard">
+    <div id="site-header"></div>
+
+    <main class="page-shell">
+      <div class="container">
+        <div id="loading-note" class="alert alert--info" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 8v5l3 2" /></svg>
+          <span>Loading your workspace…</span>
+        </div>
+
+        <div id="dash" hidden>
+          <div class="page-head">
+            <div>
+              <h1 id="dash-greeting">My grievances</h1>
+              <p id="dash-sub">Every ticket you have filed with the grievance cell.</p>
+            </div>
+            <div class="admin-toolbar">
+              <a class="btn btn--ghost btn--sm" href="/track">Track by ID</a>
+              <button class="btn btn--sm" type="button" data-open-file>File a grievance</button>
+            </div>
+          </div>
+
+          <div class="kpi-grid">
+            <div class="kpi kpi--accent">
+              <span class="kpi-label">Total filed</span>
+              <strong class="kpi-value" data-kpi="total">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Pending</span>
+              <strong class="kpi-value" data-kpi="pending">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">In review</span>
+              <strong class="kpi-value" data-kpi="review">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Resolved</span>
+              <strong class="kpi-value" data-kpi="resolved">0</strong>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <h2 id="panel-title">My grievances</h2>
+                <p id="panel-sub">Newest first. Select a ticket to read the full timeline.</p>
+              </div>
+              <div class="panel-tabs" role="tablist" aria-label="Dashboard sections">
+                <button class="panel-tab" type="button" role="tab" data-tab="mine" aria-selected="true">My grievances</button>
+                <button class="panel-tab" type="button" role="tab" data-tab="file" aria-selected="false">File new</button>
+              </div>
+            </div>
+
+            <div class="panel-body">
+              <div id="view-mine">
+                <div id="grievance-list" class="grievance-list"></div>
+              </div>
+
+              <div id="view-file" hidden>
+                <div id="file-success" hidden></div>
+
+                <form id="grievance-form" novalidate>
+                  <div id="form-error"></div>
+                  <div class="form-grid">
+                    <div class="field">
+                      <label for="grievance-category">Category</label>
+                      <select class="select" id="grievance-category" name="category" required>
+                        <option value="">Select a category</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="grievance-location">Place / office involved <span class="hint">(optional)</span></label>
+                      <input
+                        class="input"
+                        id="grievance-location"
+                        name="location"
+                        maxlength="120"
+                        placeholder="e.g. Lecture Hall 3, Block B"
+                      />
+                    </div>
+                    <div class="field span-2">
+                      <label for="grievance-subject">Subject</label>
+                      <input
+                        class="input"
+                        id="grievance-subject"
+                        name="subject"
+                        maxlength="120"
+                        placeholder="One line that sums up the issue"
+                        required
+                      />
+                    </div>
+                    <div class="field span-2">
+                      <span class="field-label">Priority</span>
+                      <div class="segmented">
+                        <label><input type="radio" name="priority" value="low" /><span>Low</span></label>
+                        <label><input type="radio" name="priority" value="medium" checked /><span>Medium</span></label>
+                        <label><input type="radio" name="priority" value="high" /><span>High</span></label>
+                        <label><input type="radio" name="priority" value="urgent" /><span>Urgent</span></label>
+                      </div>
+                      <p class="hint">Choose urgent only for safety, ragging or issues blocking an examination.</p>
+                    </div>
+                    <div class="field span-2">
+                      <label for="grievance-description">What happened?</label>
+                      <textarea
+                        class="textarea"
+                        id="grievance-description"
+                        name="description"
+                        maxlength="4000"
+                        placeholder="Describe the issue with dates, names of offices or staff involved, and what you have already tried."
+                        required
+                      ></textarea>
+                      <p class="hint">Minimum 25 characters. Be specific; vague complaints are hard to act on.</p>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="btn" type="submit" id="grievance-submit">Submit grievance</button>
+                    <span class="micro">You will receive a tracking ID immediately.</span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal" id="detail-modal" hidden>
+      <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-label="Grievance details"></aside>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/assets/js/dashboard.js"></script>
+  </body>
+</html>

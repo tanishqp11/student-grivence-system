@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Track a grievance | CampusCare</title>
+    <meta name="description" content="Enter your grievance tracking ID to see its current status and full timeline." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547d0'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-page="track">
+    <div id="site-header"></div>
+
+    <main>
+      <section class="track-hero">
+        <div class="container">
+          <h1>Track your grievance</h1>
+          <p>
+            Enter the tracking ID from your acknowledgement, for example
+            <span class="mono mono--light">GRV-2026-8K2PA</span>. No sign-in needed.
+          </p>
+
+          <form class="track-form" id="track-form" novalidate>
+            <div class="input-group">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 7h16v12H4V7Zm0 4h16M8 7V5h8v2" />
+              </svg>
+              <input
+                class="input"
+                id="track-code"
+                name="code"
+                placeholder="GRV-2026-AB12C"
+                aria-label="Grievance tracking ID"
+                autocomplete="off"
+                spellcheck="false"
+                required
+              />
+            </div>
+            <button class="btn btn--light" type="submit" id="track-submit">Check status</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="track-result" id="track-result" aria-live="polite"></div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="split">
+            <article class="panel-card">
+              <span class="overline">Reading the timeline</span>
+              <h3>What each status means</h3>
+              <ul class="check-list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  <span><strong>Pending:</strong> logged and waiting for the first review by the grievance cell.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  <span><strong>In review:</strong> routed to a department or officer and being investigated.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  <span><strong>Resolved:</strong> action was taken; the remark explains what was done.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                  <span><strong>Closed:</strong> not actionable for the reason recorded in the remark.</span>
+                </li>
+              </ul>
+            </article>
+
+            <article class="panel-card">
+              <span class="overline">Lost the ID?</span>
+              <h3>Find it in one place</h3>
+              <p>
+                Sign in to your student dashboard to see every grievance you have filed along with its
+                tracking ID, current status and the full remark history.
+              </p>
+              <div class="form-actions">
+                <a class="btn btn--sm" href="/login?next=%2Fdashboard">Open my dashboard</a>
+                <a class="btn btn--ghost btn--sm" href="/login?next=%2Fdashboard%3Ftab%3Dfile">File a new grievance</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/assets/js/track.js"></script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in | CampusCare Grievance Portal</title>
+    <meta name="description" content="Sign in to the university grievance portal to file and track your grievances." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547d0'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-page="login">
+    <div id="site-header"></div>
+
+    <main class="auth-wrap">
+      <aside class="auth-aside">
+        <div>
+          <span class="eyebrow"><span class="pulse"></span>Student portal</span>
+          <h2>Every grievance gets a number, an owner and a deadline.</h2>
+          <p>
+            Sign in to file a grievance, follow the remarks written by the grievance cell and keep a
+            record of everything you reported.
+          </p>
+          <ul class="auth-points">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+              One tracking ID for every grievance, valid even after you graduate.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+              Your tickets are private. Only you and the grievance cell can open them.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+              Written trail for scholarship, revaluation and hostel requests.
+            </li>
+          </ul>
+        </div>
+        <p class="auth-aside-foot">
+          Student Grievance Redressal Cell · Room 104, Admin Block · Mon–Fri, 10:00–17:00
+        </p>
+      </aside>
+
+      <div class="auth-main">
+        <div class="auth-card">
+          <h1>Welcome to CampusCare</h1>
+          <p class="sub">Sign in with your university credentials, or register with your roll number.</p>
+
+          <div id="session-note"></div>
+
+          <div class="tabs" role="tablist" aria-label="Account action">
+            <button class="tab" type="button" role="tab" data-tab="login" aria-selected="true">Sign in</button>
+            <button class="tab" type="button" role="tab" data-tab="register" aria-selected="false">Create account</button>
+          </div>
+
+          <div id="panel-login" role="tabpanel">
+            <div id="login-error"></div>
+            <form id="login-form" novalidate>
+              <div class="field">
+                <label for="login-identifier">Email or roll number</label>
+                <input
+                  class="input"
+                  id="login-identifier"
+                  name="identifier"
+                  autocomplete="username"
+                  placeholder="priya.sharma@student.university.edu"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label for="login-password">Password</label>
+                <input
+                  class="input"
+                  id="login-password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="Your password"
+                  required
+                />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn--block" type="submit" id="login-submit">Sign in</button>
+              </div>
+            </form>
+
+            <div class="demo-box">
+              <strong>Demo accounts (seeded by npm run db:init)</strong>
+              <div class="demo-btns">
+                <button type="button" data-demo="student">Student · Priya Sharma</button>
+                <button type="button" data-demo="admin">Admin · Grievance cell</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-register" role="tabpanel" hidden>
+            <div id="register-error"></div>
+            <form id="register-form" novalidate>
+              <div class="form-grid">
+                <div class="field span-2">
+                  <label for="register-name">Full name</label>
+                  <input class="input" id="register-name" name="name" autocomplete="name" placeholder="Priya Sharma" required />
+                </div>
+                <div class="field">
+                  <label for="register-roll">Roll number</label>
+                  <input
+                    class="input"
+                    id="register-roll"
+                    name="rollNo"
+                    placeholder="BCA2023-014"
+                    autocomplete="off"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="register-department">Department</label>
+                  <select class="select" id="register-department" name="department" required>
+                    <option value="">Select department</option>
+                    <option>Computer Applications</option>
+                    <option>Management</option>
+                    <option>Commerce</option>
+                    <option>Arts &amp; Humanities</option>
+                    <option>Science</option>
+                    <option>Law</option>
+                    <option>Education</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="register-email">University email</label>
+                  <input
+                    class="input"
+                    id="register-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="priya.sharma@student.university.edu"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="register-password">Password</label>
+                  <input
+                    class="input"
+                    id="register-password"
+                    name="password"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="Minimum 8 characters"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="register-confirm">Confirm password</label>
+                  <input
+                    class="input"
+                    id="register-confirm"
+                    name="confirm"
+                    type="password"
+                    autocomplete="new-password"
+                    placeholder="Repeat password"
+                    required
+                  />
+                </div>
+                <div class="form-actions span-2">
+                  <button class="btn btn--block" type="submit" id="register-submit">Create my account</button>
+                </div>
+              </div>
+              <p class="hint form-note">
+                By registering you agree to use the portal for genuine grievances only. False complaints
+                are subject to the university code of conduct.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/assets/js/login.js"></script>
+  </body>
+</html>

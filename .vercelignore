@@ -1,0 +1,9 @@
+# Files Vercel should not upload (used by `vercel` CLI deploys).
+node_modules
+.env
+.env.local
+.vercel
+.freebuff
+*.log
+test.log
+dev-server.log

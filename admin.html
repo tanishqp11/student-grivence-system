@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grievance cell console | CampusCare</title>
+    <meta name="description" content="Administrator console for the university grievance cell: triage, assign and resolve student grievances." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232547d0'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body data-page="admin">
+    <div id="site-header"></div>
+
+    <main class="page-shell">
+      <div class="container">
+        <div id="gate-loading" class="alert alert--info" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 8v5l3 2" /></svg>
+          <span>Checking administrator session…</span>
+        </div>
+
+        <div id="admin-gate" hidden>
+          <div class="card card-pad admin-gate">
+            <span class="overline">Restricted</span>
+            <h1>Grievance cell sign in</h1>
+            <p class="muted gate-lead">Only accounts with the administrator role can open this console.</p>
+            <div id="gate-error" class="gate-error"></div>
+            <form id="gate-form" novalidate>
+              <div class="field">
+                <label for="gate-identifier">Email</label>
+                <input class="input" id="gate-identifier" name="identifier" autocomplete="username" placeholder="admin@university.edu" required />
+              </div>
+              <div class="field">
+                <label for="gate-password">Password</label>
+                <input class="input" id="gate-password" name="password" type="password" autocomplete="current-password" required />
+              </div>
+              <div class="form-actions">
+                <button class="btn btn--block" type="submit" id="gate-submit">Sign in to console</button>
+              </div>
+            </form>
+            <div class="demo-box">
+              <strong>Seeded administrator</strong>
+              <p class="hint">admin@university.edu / Admin@123. Change these with ADMIN_EMAIL and ADMIN_PASSWORD.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="admin-app" hidden>
+          <div class="page-head">
+            <div>
+              <h1>Grievance cell console</h1>
+              <p id="admin-sub">Triage every open ticket, assign an officer and record the action taken.</p>
+            </div>
+            <div class="admin-toolbar">
+              <button class="btn btn--ghost btn--sm" type="button" id="refresh-btn">Refresh</button>
+              <a class="btn btn--sm" href="/api/admin/export">Export CSV</a>
+            </div>
+          </div>
+
+          <div class="kpi-grid kpi-grid--5">
+            <div class="kpi kpi--accent">
+              <span class="kpi-label">Total</span>
+              <strong class="kpi-value" data-kpi="total">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Pending</span>
+              <strong class="kpi-value" data-kpi="pending">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">In review</span>
+              <strong class="kpi-value" data-kpi="review">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Resolved</span>
+              <strong class="kpi-value" data-kpi="resolved">0</strong>
+            </div>
+            <div class="kpi">
+              <span class="kpi-label">Avg. closure</span>
+              <strong class="kpi-value" data-kpi="avg">—</strong>
+            </div>
+          </div>
+
+          <div class="admin-shell">
+            <div class="chart-grid">
+              <section class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Load by category</h2>
+                    <p>Where students are reporting problems.</p>
+                  </div>
+                </div>
+                <div class="panel-body" id="chart-category"></div>
+              </section>
+
+              <section class="panel">
+                <div class="panel-head">
+                  <div>
+                    <h2>Status mix</h2>
+                    <p>How much of the queue is still open.</p>
+                  </div>
+                </div>
+                <div class="panel-body" id="chart-status"></div>
+              </section>
+            </div>
+
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>All grievances</h2>
+                  <p id="table-count">Loading tickets…</p>
+                </div>
+              </div>
+
+              <div class="filter-bar">
+                <input class="input" id="filter-q" type="search" placeholder="Search subject, ID or student" aria-label="Search grievances" />
+                <select class="select" id="filter-status" aria-label="Filter by status">
+                  <option value="">All statuses</option>
+                  <option value="pending">Pending</option>
+                  <option value="review">In review</option>
+                  <option value="resolved">Resolved</option>
+                  <option value="rejected">Closed</option>
+                </select>
+                <select class="select" id="filter-category" aria-label="Filter by category">
+                  <option value="">All categories</option>
+                  <option value="academic">Academic</option>
+                  <option value="examination">Examination</option>
+                  <option value="hostel">Hostel &amp; Mess</option>
+                  <option value="infrastructure">Infrastructure</option>
+                  <option value="faculty">Faculty Conduct</option>
+                  <option value="fees">Fees &amp; Scholarship</option>
+                  <option value="harassment">Harassment / Ragging</option>
+                  <option value="other">Other</option>
+                </select>
+                <select class="select" id="filter-department" aria-label="Filter by department">
+                  <option value="">All departments</option>
+                  <option>Computer Applications</option>
+                  <option>Management</option>
+                  <option>Commerce</option>
+                  <option>Arts &amp; Humanities</option>
+                  <option>Science</option>
+                  <option>Law</option>
+                  <option>Education</option>
+                  <option>Other</option>
+                </select>
+                <button class="btn btn--ghost btn--sm" type="button" id="clear-filters">Clear</button>
+              </div>
+
+              <div class="table-wrap">
+                <table class="data">
+                  <thead>
+                    <tr>
+                      <th>Ticket</th>
+                      <th>Student</th>
+                      <th>Department</th>
+                      <th>Status</th>
+                      <th>Priority</th>
+                      <th>Submitted</th>
+                    </tr>
+                  </thead>
+                  <tbody id="grievance-rows"></tbody>
+                </table>
+                <div id="table-empty" class="table-empty" hidden>No grievances match these filters.</div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal" id="detail-modal" hidden>
+      <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-label="Grievance details"></aside>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script type="module" src="/assets/js/admin.js"></script>
+  </body>
+</html>
